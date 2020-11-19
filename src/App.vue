@@ -1,21 +1,10 @@
 <template>
   <div id="app">
     <keep-alive>
-      <router-view v-if="$route.meta.keepAlive" />
+      <router-view v-if="$route.meta.keepAllive" />
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive" />
+    <router-view v-if="!$route.meta.keepAllive" />
   </div>
 </template>
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-@Component({
-  components: {}
-})
-export default class App extends Vue {}
-</script>
 
-<style lang="scss">
-#app {
-  -webkit-overflow-scrolling: touch;
-}
-</style>
+<style lang="scss"></style>

@@ -1,4 +1,4 @@
-// @import url("//at.alicdn.com/t/font_1542370_8jfmu4b5y6o.css");
+@import url("//at.alicdn.com/t/font_1542370_8jfmu4b5y6o.css");
 @import './base.scss';
 
 
@@ -107,11 +107,11 @@ textarea {
   clear: both;
 }
 
-.float-left {
+.pull-left {
   float: left;
 }
 
-.float-right {
+.pull-right {
   float: right;
 }
 
@@ -121,6 +121,26 @@ textarea {
 
 .weight-500 {
   font-weight: 500;
+}
+
+.underline-normarl {
+  text-decoration: underline;
+}
+
+.margin_left10px {
+  margin-left: 10px;
+}
+
+.margin_left8px {
+  margin-left: 8px;
+}
+
+.margin_left4px {
+  margin-left: 4px;
+}
+
+.width_100 {
+  width: 100px;
 }
 
 .padding {
@@ -155,6 +175,26 @@ textarea {
   justify-content: center !important;
 }
 
+.ellipsis-1,
+.ellipsis-2,
+.ellipsis-3 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis-1 {
+  -webkit-line-clamp: 1;
+}
+
+.ellipsis-2 {
+  -webkit-line-clamp: 2;
+}
+
+.ellipsis-3 {
+  -webkit-line-clamp: 3;
+}
+
 .iconfont {
   vertical-align: middle !important;
 }
@@ -162,31 +202,41 @@ textarea {
 .card {
   // margin-bottom: 8px;
   padding: 8px;
+
   color: #303133;
   border: 1px solid #ebeef5;
   border-radius: 4px;
   background-color: #fff;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+
   transition: all 0.5s;
 }
+
+
 
 .link {
   color: $blue;
   font-weight: 700;
   cursor: pointer;
+
   &:hover {
     color: $blue;
+
     text-decoration: underline;
   }
+
   &.red {
     color: red;
   }
+
   &.red:hover {
     color: red;
   }
+
   &.green {
     color: #48b548;
   }
+
   &.green:hover {
     color: #48b548;
   }
@@ -201,17 +251,33 @@ textarea {
      -moz-user-select: none; /*火狐*/
       -ms-user-select: none; /*IE10*/
           user-select: none;
+
    -khtml-user-select: none; /*早期浏览器*/
+}
+
+.el-image {
+  vertical-align: middle;
+}
+.el-dialog__body{
+  padding:15px 20px!important
+}
+.el-radio-group .el-radio {
+  margin-right: 16px;
+}
+.el-input__inner{
+  color:#000!important;
 }
 
 .scroll {
   overflow-y: auto;
   padding-bottom: 20px;
+
   &::-webkit-scrollbar {
     /*滚动条整体样式*/
     width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
     border-radius: 10px;
   }
+
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #999;
@@ -228,8 +294,10 @@ textarea {
 .dialog-footer {
   display: flex;
   justify-content: flex-end;
+
   margin-top: 10px;
 }
+
 .tel {
   cursor: pointer;
   color: $orange;
@@ -238,7 +306,81 @@ textarea {
     color:orangered
   }
 }
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow,
+.el-input__inner,
+.el-textarea> textarea {
+  border-color: #aaa!important;
+
+  &:hover {
+    border-color: $blue!important;
+  }
+}
+
+
 input::-webkit-input-placeholder { /* WebKit browsers */
   color:#999!important;
   font-style: italic;
+}
+
+.sort-btn {
+  position: relative;
+
+  display: inline-block;
+
+  margin-right: 20px;
+  padding-right: 15px;
+
+  line-height: 28px;
+
+  cursor: pointer;
+
+  .el-icon-caret-bottom,
+  .el-icon-caret-top {
+    position: absolute;
+    right: 0;
+  }
+
+  .el-icon-caret-top {
+    top: 3px;
+  }
+
+  .el-icon-caret-bottom {
+    bottom: 3px;
+  }
+
+  .active {
+    color: #00abf5;
+  }
+
+  &:hover span {
+    color: #00abf5;
+  }
+}
+.el-image-viewer__close .el-icon-circle-close {
+  color: #fff;
+}
+.el-input-group__append button.el-button,
+.el-input-group__append div.el-select .el-input__inner,
+.el-input-group__append div.el-select:hover .el-input__inner,
+.el-input-group__prepend button.el-button, 
+.el-input-group__prepend div.el-select .el-input__inner, 
+.el-input-group__prepend div.el-select:hover .el-input__inner{
+  border-color: transparent;
+  background-color: #409eff;
+  color: #fff;
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 0 5px 5px 0 ;
+}
+.el-input-group__append, .el-input-group__prepend{
+  background-color: #409eff;
+  vertical-align: middle;
+  display: table-cell;
+  position: relative;
+  border: 1px solid #409eff;
+  padding: 0 20px;
+  width: 1px;
+  white-space: nowrap;
 }

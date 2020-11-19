@@ -1,24 +1,32 @@
-import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import Home from '../views/Home.vue'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
-const routes: Array<RouteConfig> = [
+const index: Array<RouteConfig> = [
+  {
+    path: 'home',
+    redirect: '/'
+  },
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/Home.vue')
+    component: () => import('@/views/Home.vue'),
+    meta: {
+      title: '首页'
+    }
   }
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   component: () =>
-  //     import("../views/About.vue")
-  // }
-];
+]
 
 const router = new VueRouter({
-  routes
-});
+  routes: [
+    {
+      component: () => import('@/App.vue'),
+      path: '/',
+      children: [...index]
+    }
+  ]
+})
 
-export default router;
+export default router

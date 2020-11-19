@@ -1,11 +1,14 @@
 module.exports = {
   root: true,
+
   env: {
     node: true,
     es6: true,
     browser: true,
   },
+
   plugins: ["html", "prettier"],
+
   extends: [
     "plugin:vue/essential",
     "eslint:recommended",
@@ -16,13 +19,14 @@ module.exports = {
     "prettier/standard",
     "prettier",
   ],
+
   rules: {
     "prettier/prettier": [
       // eslint校验不成功后，error或2则报错，warn或1则警告，off或0则⽆提示
       "error",
       {
         singleQuote: true,
-        semi: true, //结束是否加分号
+        semi: false, //结束是否加分号
         printWidth: 160, //每行最长字符
       },
     ],
@@ -34,10 +38,12 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
   },
+
   parserOptions: {
     parser: "@typescript-eslint/parser",
     ecmaVersion: 6,
   },
+
   extends: [
     "plugin:vue/essential",
     "eslint:recommended",

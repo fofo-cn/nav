@@ -1,10 +1,14 @@
 <template>
   <div id="app">
     <keep-alive>
-      <router-view v-if="$route.meta.keepAllive" />
+      <router-view v-if="$route.meta.keepAlive" />
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAllive" />
+    <router-view v-if="!$route.meta.keepAlive" />
   </div>
 </template>
 
-<style lang="scss"></style>
+<script>
+export default { name: 'app' }
+</script>
+
+<style></style>

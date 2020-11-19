@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -14,7 +13,8 @@ const index: Array<RouteConfig> = [
     name: 'home',
     component: () => import('@/views/Home.vue'),
     meta: {
-      title: '首页'
+      title: '首页',
+      keepAlive: true
     }
   }
 ]

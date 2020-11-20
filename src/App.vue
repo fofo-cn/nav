@@ -23,6 +23,7 @@ import lottie from "lottie-web"
 import loading from "./assets/loading.json" // 导入json包
 export default {
   name: "app",
+  components: {},
   data() {
     return {
       defaultOptions: { animationData: animationData },
@@ -41,13 +42,14 @@ export default {
     setTimeout(() => {
       this.anim.stop()
       this.showLottie = false
-    }, 5000)
+    }, 50)
   }
 }
 </script>
 
 <style lang="scss" scoped>
 #app {
+  min-width: 1200px;
   .lottie {
     position: fixed;
     top: 0;

@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="main">
+    <hearder-nav />
     <div class="container">
       <div class="search-warp">
         <el-input
@@ -30,9 +31,10 @@
 <script lang="ts">
 import { Option, Select } from "element-ui"
 import { Component, Vue, Prop } from "vue-property-decorator"
+import HearderNav from "../components/HearderNav.vue"
 import DisplayWindow from "./DisplayWindow.vue"
 Vue.use(Select).use(Option)
-@Component({ components: { DisplayWindow } })
+@Component({ components: { DisplayWindow, HearderNav } })
 export default class Home extends Vue {
   keyword = ""
   select = "baidu"
@@ -53,14 +55,17 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  .search-warp {
-    width: 60%;
-    position: fixed;
-    top: 15%;
-    left: 50%;
-    transform: translateY(-15%);
-    transform: translateX(-50%);
+.main {
+  min-width: 1200px;
+  .container {
+    .search-warp {
+      width: 60%;
+      position: fixed;
+      top: 15%;
+      left: 50%;
+      transform: translateY(-15%);
+      transform: translateX(-50%);
+    }
   }
 }
 </style>

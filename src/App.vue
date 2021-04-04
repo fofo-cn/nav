@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <transition name="fade">
+    <!-- <transition name="fade">
       <div class="lottie" v-if="showLottie">
         <div class="animation-style" ref="animation"></div>
       </div>
-    </transition>
+    </transition> -->
     <div>
       <div class="img-wrap">
         <img src="./assets/bg1.jpg" alt="" class="img-content" />
@@ -18,31 +18,31 @@
 </template>
 
 <script>
-import * as animationData from "./assets/loading.json"
-import lottie from "lottie-web"
+// import * as animationData from "./assets/loading.json"
+// import lottie from "lottie-web"
 import loading from "./assets/loading.json" // 导入json包
 export default {
   name: "app",
   components: {},
   data() {
     return {
-      defaultOptions: { animationData: animationData },
-      anim: {},
-      showLottie: true
+      // defaultOptions: { animationData: animationData },
+      // anim: {},
+      // showLottie: true
     }
   },
   mounted() {
-    this.anim = lottie.loadAnimation({
-      container: this.$refs.animation,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: loading //动画json
-    })
-    setTimeout(() => {
-      this.anim.stop()
-      this.showLottie = false
-    }, 50)
+    // this.anim = lottie.loadAnimation({
+    //   container: this.$refs.animation,
+    //   renderer: "svg",
+    //   loop: true,
+    //   autoplay: true,
+    //   animationData: loading //动画json
+    // })
+    // setTimeout(() => {
+    //   this.anim.stop()
+    //   this.showLottie = false
+    // }, 50)
   }
 }
 </script>

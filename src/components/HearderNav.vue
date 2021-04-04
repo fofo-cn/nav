@@ -5,13 +5,18 @@
       <span>这是一个正经的导航页</span>
     </div>
     <div class="btn-wrap">
+      <el-button type="primary" size="mini" @click="lottery = true">
+        随机号码
+      </el-button>
       <el-button type="primary" size="mini" @click="calendar = true">日历</el-button>
       <el-button type="primary" size="mini" @click="computer = true">电脑配置辅助表</el-button>
     </div>
+    <el-dialog title="体彩" top="10vh" :visible.sync="lottery" :before-close="handleLotteryClose">
+      <Lottery />
+    </el-dialog>
     <el-dialog title="日历" top="10vh" :visible.sync="calendar" :before-close="handleCalendarClose">
       <Calendar />
     </el-dialog>
-
     <el-dialog
       width="70%"
       title="电脑配置辅助表"
@@ -27,12 +32,17 @@
 import { Component, Vue, Prop } from "vue-property-decorator"
 import Computer from "./Computer.vue"
 import Calendar from "./CalendarDialog.vue"
+import Lottery from "./LotteryDialog.vue"
 import { Dialog } from "element-ui"
 Vue.use(Dialog)
-@Component({ components: { Computer, Calendar } })
+@Component({ components: { Computer, Calendar, Lottery } })
 export default class HearderNav extends Vue {
   calendar = false
   computer = false
+  lottery = false
+  handleLotteryClose() {
+    this.lottery = false
+  }
   handleCalendarClose() {
     this.calendar = false
   }

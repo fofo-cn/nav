@@ -1,7 +1,7 @@
 <template>
-  <div class="cantainer card">
-    <div class="flex1 scroll" v-for="value in list" :key="value.title">
-      <h2>{{ value.title }}</h2>
+  <div class="cantainer card scroll">
+    <div class="content-wrap" v-for="value in list" :key="value.title">
+      <el-divider content-position="left">{{ value.title }}</el-divider>
       <div
         class="content link"
         v-for="item in value.data"
@@ -20,6 +20,8 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator"
+import { Divider } from "element-ui"
+Vue.use(Divider)
 @Component({ components: {} })
 export default class DisplayWindow extends Vue {
   list = [
@@ -152,9 +154,40 @@ export default class DisplayWindow extends Vue {
           Url: "https://bbs.nga.cn/"
         },
         {
-          Name: "蒸汽平台",
+          Name: "Steam",
           Icon: "https://store.steampowered.com/favicon.ico",
           Url: "https://store.steampowered.com/"
+        },
+        {
+          Name: "Epic",
+          Icon:
+            "https://static-assets-prod-1251447533.file.myqcloud.com/epic-store/static/favicon.ico",
+          Url: "https://www.epicgames.com/store/zh-CN/"
+        }
+      ]
+    },
+    {
+      title: "考编制",
+      data: [
+        {
+          Name: "厦门事业单位",
+          Icon: "https://app.hrss.xm.gov.cn/syzp/v3/assets/img/logo.png",
+          Url: "https://app.hrss.xm.gov.cn/syzp/v3/"
+        },
+        {
+          Name: "福建省公务员",
+          Icon: "http://gwy.rst.fujian.gov.cn/content/images/rst-logo.jpg",
+          Url: "https://gwy.rst.fujian.gov.cn/eui/login"
+        },
+        {
+          Name: "福建省教招",
+          Icon: "http://jszk.eeafj.cn/imageindex2/gg_index.jpg",
+          Url: "http://jszk.eeafj.cn/sign.html"
+        },
+        {
+          Name: "教师资格考试",
+          Icon: "http://ntce.neea.edu.cn/res/Home/node/logl.jpg",
+          Url: "http://ntce.neea.edu.cn/"
         }
       ]
     }
@@ -167,7 +200,7 @@ export default class DisplayWindow extends Vue {
 
 <style lang="scss" scoped>
 .cantainer {
-  width: 59%;
+  width: 60%;
   height: 58%;
   position: fixed;
   background: #fff;
@@ -175,35 +208,28 @@ export default class DisplayWindow extends Vue {
   left: 50%;
   transform: translateY(-21%);
   transform: translateX(-50%);
-  display: flex;
-  .flex1 {
-    &:nth-child(2) {
-      margin: 0 8px;
-    }
-    h2 {
-      text-align: center;
-    }
+  overflow-y: auto;
+  .content-wrap {
+    display: flex;
+    flex-wrap: wrap;
     .content {
+      width: 130px;
+      min-height: 73px;
+      text-align: center;
+      margin-bottom: 8px;
+      margin-right: 32px;
       display: flex;
-      height: 46px;
-      line-height: 46px;
-      margin: 8px 0;
+      justify-content: center;
+      align-items: center;
       .img-warp {
-        flex: 2;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 10px;
         img {
-          width: 100%;
+          width: 50px;
         }
       }
       .name {
-        flex: 12;
-      }
-      .showbtton {
-        flex: 2;
-        line-height: 46px;
+        width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
